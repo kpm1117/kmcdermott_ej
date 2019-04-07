@@ -1,3 +1,23 @@
+# Features
+
+* Enter multiple ids for lookup
+* API calls are made in batches of 5 in the backend (rate limited by OpenFIGI)
+* Any `CUSIP`s that are identified as "Muni" are stored in the database along with the timestamp 
+  of first fetch. Depending on use-case, we may want the first or the latest timestamp (for example,
+  caching logic/Time-to-live in the local database)
+* Muni is searched for in the `securityType2` field
+
+# Demo
+
+## User-interface
+
+![](kmcdermott_ej_demo_ux.gif)
+
+## Database
+
+![](kmcdermott_ej_demo_database.gif)
+
+
 # Setup and Installation
 
 This project was developed in a Linux environment with the following
