@@ -59,6 +59,12 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+Start your server:
+
+```
+python manage.py runserver
+```
+
 # Discussion
 
 The OpenFIGI API documentation defines the following limits for
