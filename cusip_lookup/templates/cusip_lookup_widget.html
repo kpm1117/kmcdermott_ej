@@ -1,0 +1,43 @@
+<form method="post">{% csrf_token %}
+    <div id="form-prompt-1">
+        {{ form.PROMPT }}
+    </div>
+    <div id="form-note-1" style="font-style:italic;">
+        {{ form.NOTE }}
+    </div>
+
+    <div id="form-box" style="margin: 15px 0px;">
+        <div class="fieldWrapper">
+            {% if form.cusips.errors %}
+            <div style="color: red;">
+                {% for err in form.cusips.errors %}
+                <p>{{ err }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {{ form.cusips }}
+        </div>
+    </div>
+
+    <div id="submit">
+        <input type="submit" value="Submit Lookup Request" style="color:white; background-color:#4286f4;">
+    </div>
+</form>
+
+<div>
+    <h2>Results from last request ({{ timestamp }}):</h2>
+    {% if found_munis %}
+    {% autoescape off %}
+    {{ muni_table }}
+    {% endautoescape %}
+    {% else %}
+    <h3>No muni bonds found in the form entries.</h3>
+    {% endif %}
+    {% if show_errors %}
+    <h3>There were errors!</h3>
+    {% autoescape off %}
+    {{ error_table }}
+    {% endautoescape %}
+    {% endif %}
+</div>
