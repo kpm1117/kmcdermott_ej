@@ -1,3 +1,9 @@
+# Summary
+
+This Django project is a simple demo of back-end functionality that makes an external API call and uses Pandas for data transformation. The featured application uses a CUSIP lookup to extract data about financial instruments, then identifies which of those instruments are municipal bonds, stores them locally, and displays the results.
+
+**Note:** The UI is intentionally skeletal.
+
 # Features
 
 * Enter multiple ids for lookup
